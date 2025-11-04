@@ -1,0 +1,21 @@
+# Large Nuclear Reactor Configuration for Deep Space
+# Suitable for large spacecraft or space station
+
+name: "Deep Space Reactor"
+description: "High-power nuclear reactor for extended deep space missions"
+
+# Temperature (Kelvin)
+coolant_inlet_temp: 700.0
+
+# Mass flow rate (kg/s)
+coolant_flow_rate: 20.0
+
+# Thermal power output (Watts) - 5 MW
+reactor_power: 5000000.0
+
+# Core geometry (meters)
+core_height: 2.5
+core_diameter: 0.8
+
+# System pressure (Pascals) - ~100 bar
+pressure: 10000000.0

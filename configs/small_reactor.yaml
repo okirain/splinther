@@ -1,0 +1,21 @@
+# Small Nuclear Reactor Configuration for Space Missions
+# Suitable for Mars surface habitat or lunar base
+
+name: "Small Space Reactor"
+description: "Compact nuclear reactor for planetary surface missions"
+
+# Temperature (Kelvin)
+coolant_inlet_temp: 600.0
+
+# Mass flow rate (kg/s)
+coolant_flow_rate: 5.0
+
+# Thermal power output (Watts) - 500 kW
+reactor_power: 500000.0
+
+# Core geometry (meters)
+core_height: 1.5
+core_diameter: 0.4
+
+# System pressure (Pascals) - ~50 bar
+pressure: 5000000.0
