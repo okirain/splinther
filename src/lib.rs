@@ -1,6 +1,7 @@
 use pyo3::prelude::*;
 use serde::{Deserialize, Serialize};
 
+pub mod constants;
 pub mod thermal_hydraulics;
 pub mod fluid_dynamics;
 pub mod heat_transfer;
@@ -112,12 +113,16 @@ impl ReactorCalculator {
             self.config.coolant_inlet_temp,
         );
 
+        // Calculate average temperature for pressure drop calculations
+        let avg_temp = (self.config.coolant_inlet_temp + outlet_temp) / 2.0;
+        
         // Calculate pressure drop through core
         let pressure_drop = pressure::calculate_pressure_drop(
             self.config.coolant_flow_rate,
             self.config.core_height,
             self.config.core_diameter,
             reynolds,
+            avg_temp,
         );
 
         // Estimate maximum fuel temperature

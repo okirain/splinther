@@ -1,9 +1,6 @@
 /// Thermal hydraulics calculations for nuclear reactor coolant
 use std::f64::consts::PI;
-
-/// Specific heat capacity of liquid sodium (J/kg·K)
-/// Sodium is commonly used as coolant in space nuclear reactors
-const SODIUM_CP: f64 = 1270.0;
+use crate::constants::{SODIUM_CP, FUEL_TEMP_RISE_FACTOR};
 
 /// Calculate outlet temperature of coolant
 /// 
@@ -49,7 +46,7 @@ pub fn calculate_max_fuel_temperature(
     
     // Add fuel centerline temperature rise (simplified)
     // Assumes linear heat generation with thermal conductivity effects
-    let fuel_temp_rise = temp_rise * 2.5; // Empirical factor for fuel pellet
+    let fuel_temp_rise = temp_rise * FUEL_TEMP_RISE_FACTOR;
     
     coolant_temp + fuel_temp_rise
 }

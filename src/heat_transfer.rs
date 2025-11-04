@@ -13,7 +13,7 @@ pub fn sodium_thermal_conductivity(temperature: f64) -> f64 {
 /// 
 /// Pr = (cp * μ) / k
 pub fn calculate_prandtl_number(temperature: f64) -> f64 {
-    const SODIUM_CP: f64 = 1270.0; // J/kg·K
+    use crate::constants::SODIUM_CP;
     let viscosity = fluid_dynamics::sodium_viscosity(temperature);
     let thermal_cond = sodium_thermal_conductivity(temperature);
     

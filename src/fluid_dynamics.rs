@@ -11,10 +11,10 @@ pub fn sodium_density(temperature: f64) -> f64 {
 
 /// Dynamic viscosity of liquid sodium (Pa·s)
 pub fn sodium_viscosity(temperature: f64) -> f64 {
-    // Empirical correlation for liquid sodium
-    // μ ≈ 0.001 Pa·s at typical reactor temperatures
+    use crate::constants::{SODIUM_VISCOSITY_BASE, SODIUM_VISCOSITY_TEMP_COEF};
+    // Empirical correlation for liquid sodium (Fink-Leibowitz)
     let temp_celsius = temperature - 273.15;
-    0.001 * (-2.45e-4 * temp_celsius + 1.0).exp()
+    SODIUM_VISCOSITY_BASE * (SODIUM_VISCOSITY_TEMP_COEF * temp_celsius + 1.0).exp()
 }
 
 /// Calculate Reynolds number for flow characterization
