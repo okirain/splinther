@@ -34,8 +34,8 @@ Heat pipes are **passive heat transfer devices** with fundamentally different ph
 
 ## Comparison
 
-| Feature | Current System (Forced Convection) | Heat Pipes |
-|---------|-----------------------------------|------------|
+| Feature | Current System (Forced Convection) | Heat Pipes   |
+|---------|---------------------------------------|------------|
 | Flow mechanism | Pump-driven | Capillary action |
 | Phase | Single (liquid) | Two-phase (liquid/vapor) |
 | Power required | Yes (pump) | No (passive) |
@@ -51,13 +51,15 @@ Both technologies are used in space nuclear reactors, but for different purposes
 - Primary cooling loop in power-generating reactors
 - Transfers heat from core to power conversion system
 - Enables active temperature control
-- Used in: Kilopower, SNAP reactors, Soviet RORSAT systems
+- Used in: Traditional SNAP reactors, Soviet RORSAT systems
+- Note: Some reactors like Kilopower use both - heat pipes for internal core cooling, then forced convection (or Stirling engines) for power conversion
 
 ### Heat Pipes (Not Implemented)
-- Often used as reactor core heat removal elements
-- Transfers heat from fuel pins to external radiator
+- Often used as reactor core heat removal elements within the fuel assembly
+- Transfers heat from individual fuel pins to external envelope
 - Provides passive safety and redundancy
-- Used in: NASA Kilopower (used heat pipes internally), eVinci reactor design
+- Used in: NASA Kilopower reactor core, eVinci reactor design
+- Note: Kilopower uses heat pipes INSIDE the reactor core, but this codebase models the system-level forced convection cooling
 
 ## Why This Matters
 
