@@ -4,6 +4,8 @@
 
 Splinther is a high-performance computational tool for analyzing nuclear reactor fluid dynamics in space applications. It combines the computational power of Rust with the flexibility of Python configuration management.
 
+> **Note**: This tool models **forced convection cooling systems** with liquid sodium coolant. It does **not** include heat pipe modeling. See [HEAT_PIPES_STATUS.md](HEAT_PIPES_STATUS.md) for details on the distinction between forced convection and heat pipe cooling systems.
+
 ## Features
 
 - **High-Performance Rust Core**: Fast, accurate fluid dynamics calculations
@@ -165,6 +167,10 @@ python examples/basic_usage.py
 | `pressure` | Pascals | System operating pressure |
 
 ## Physics Models
+
+**Cooling System Type**: Forced Convection (Single-Phase Flow)
+
+This calculator models active, pump-driven liquid sodium cooling systems. It does NOT model heat pipes (passive, two-phase cooling devices). For a detailed comparison, see [HEAT_PIPES_STATUS.md](HEAT_PIPES_STATUS.md).
 
 ### Thermal Hydraulics
 - Energy balance calculations
